@@ -1,0 +1,220 @@
+/* ===================================
+   Sukhan Mastanaa - Main Stylesheet
+   Efficient, RTL Urdu Poetry Website
+   =================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    direction: rtl;
+    text-align: right;
+    background-color: #f8f7f4;
+    color: #333;
+    line-height: 1.8;
+    min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    color: #1a3a5f;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Header & Navigation */
+header {
+    background: linear-gradient(135deg, #1a3a5f, #2c5282);
+    color: white;
+    padding: 1.5rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.site-title {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+#searchInput {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    font-family: 'Noto Nastaliq Urdu', serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 5%;
+}
+
+/* Poem Cards Grid */
+.poems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.poem-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poem-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.poem-card h3 {
+    background: #1a3a5f;
+    color: white;
+    padding: 1rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.poem-content {
+    padding: 1.5rem;
+    font-size: 1.15rem;
+    color: #444;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.poem-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+    text-align: left;
+    direction: ltr;
+}
+
+/* Poem Detail Page Specific */
+.poem-full {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 800px;
+    line-height: 2.2;
+    font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background: #1a3a5f;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+}
+
+/* Dark Mode Toggle (Optional - add button later) */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .poem-card,
+body.dark-mode .poem-full {
+    background: #1e1e1e;
+}
+
+body.dark-mode h1, body.dark-mode h2 {
+    color: #a8d0ff;
+}
+
+/* Utility */
+.text-center {
+    text-align: center;
+}
+
+.mb-2 { margin-bottom: 2rem; }
+.mt-4 { margin-top: 4rem; }
+.read-more-btn {
+    display: block;
+    text-align: center;
+    padding: 0.8rem;
+    background: #1a3a5f;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.read-more-btn:hover {
+    background: #2c5282;
+}
+
+mark {
+    background: #d4af37;
+    color: #1a3a5f;
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+}
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+    transition: transform 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    transform: rotate(20deg);
+}
+
+body.dark-mode #darkModeToggle {
+    content: "☀️";
+}
+
+/* Override for dark mode icon */
+body.dark-mode #darkModeToggle::after {
+    content: "☀️";
+    font-size: 1.8rem;
+}
